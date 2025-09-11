@@ -1,0 +1,9 @@
+@model List<string> 
+@*Esto indica que la vista recibe una lista de strings  *@
+<h1>Lista de nombres</h1>
+
+<ul>
+    @foreach(var nombre in Model){
+        <li>@nombre</li>
+    }
+</ul>

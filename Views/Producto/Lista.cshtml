@@ -1,0 +1,21 @@
+@model List<MiPrimeraApp.Models.Producto>
+
+<h1>Listado de productos</h1>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model){
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Nombre</td>
+                <td>@p.Precio.ToString("C")</td>
+            </tr>
+        }
+    </tbody>
+</table>
