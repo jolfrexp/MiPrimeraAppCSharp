@@ -23,6 +23,11 @@ public class ProductoController : Controller
     [HttpPost]
     public IActionResult Crear(Producto producto)
     {
+        if (!ModelState.IsValid)
+        {
+            //Si hay errores vuelve a mostrar el formulario
+            return View(producto);
+        }
         // Aqui normalmente lo guardariamos en la base de datos
         // por ahora lo mostramos en consola
         Console.WriteLine($"Producto:{producto.Nombre}, Precio:{producto.Precio}");
