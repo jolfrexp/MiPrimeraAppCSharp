@@ -1,0 +1,33 @@
+@using Microsoft.AspNetCore.Http.Features
+@model List<MiPrimeraApp.Models.Producto>
+
+<h2>Lista de productos</h2>
+
+<p>
+    <a asp-action="Crear" class="btn btn-primary">Crear nuevo</a>
+</p>
+
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model){
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.Nombre</td>
+                <td>@item.Precio.ToString("0.##")</td>
+                <td>
+                    <a asp-action="Editar" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                    <a asp-action="Eliminar" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            
+        }
+    </tbody>
+</table>

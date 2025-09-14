@@ -3,12 +3,12 @@
 
 <form asp-action="Crear" method="post">
     <div class="form-group">
-        <label>Nombre</label>
+        <label asp-for="Nombre">Nombre</label>
         <input asp-for="Nombre" class="form-control">
         <span asp-validation-for="Nombre" class="text-danger"></span>
     </div>
     <div class="form-group">
-        <label>Precio</label>
+        <label asp-for="Precio">Precio</label>
         <input asp-for="Precio" class="form-control">
         <span asp-validation-for="Precio" class="text-danger"></span>
     </div>
