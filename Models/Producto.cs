@@ -12,9 +12,12 @@ public class Producto
     public decimal Precio { get; set; }
 
     //Pk
-    [Required(ErrorMessage ="La categoria es requerida")]
+    [Required(ErrorMessage = "La categoria es requerida")]
     public int CategoriaId { get; set; }
 
     public Categoria? Categoria { get; set; }
+
+    //Relacion muchos a muchos
+    public List<ProductoEtiqueta> ProductoEtiquetas { get; set; } = new();
     
 }

@@ -1,0 +1,24 @@
+@model IEnumerable<Etiqueta>
+
+<h2>Lista de Etiquetas</h2>
+
+<a asp-action="Create" class="btn btn-primary">Nueva Etiqueta</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nombre</th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model){
+            <tr>
+                <td>@item.Nombre</td>
+                <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn btn-warning">Editar</a>
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

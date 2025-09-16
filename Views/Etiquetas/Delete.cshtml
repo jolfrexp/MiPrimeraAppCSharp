@@ -1,0 +1,10 @@
+@model Etiqueta
+
+<h2>ELiminar Etiqueta</h2>
+
+<form asp-action="Delete">
+    <input type="hidden" asp-for="Id">
+    <p>Seguro que quieres eliminar la Etiqueta <strong>@Model.Nombre</strong>?</p>
+    <button type="submit" class="btn btn-danger">Eliminar</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancelar</a>
+</form>
